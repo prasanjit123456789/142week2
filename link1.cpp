@@ -123,8 +123,29 @@ public:
 		else{
 			//recursion
 			revprint(current->next);
-			cout<<current->data<<"->";
+			cout<<current->value<<"->";
 		}
+	}
+	//reverse function that will reverse the linkedlist
+	void reverse(){
+	    //doreverse function that will reverse the linkedlist by recursion
+	    doreverse(head);
+	    Node *current=head;
+	    head=tail;
+	    tail=current;
+	    tail->next=NULL;
+	}
+	//doreverse function 
+	void doreverse(Node* current){
+	    //stopping condition
+	    if(current==tail){return;}
+	    //otherwise
+	    else{
+	        //use recursion
+	        doreverse(current->next);
+	        current->next->next=current;
+	           
+	    }
 	}
 	//countItems function will count the number of nodes and returns it
 	int countItems(){
@@ -155,5 +176,7 @@ int main(){
 	l.delet();l.deleteAt(2);l.display();
 	l.reverseprint();
 	l.countItems();
+	l.reverse();
+	l.display();
 	return 0;
 }
