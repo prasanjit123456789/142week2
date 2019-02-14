@@ -110,6 +110,22 @@ public:
 		//delete the position
 		delete temp;
 	}
+	//reverseprint function that prints in the reverse order
+	void reverseprint(){
+		//call revprint function that will do recursion and print in the reverse order
+		revprint(head);
+		cout<<endl;
+	}
+	//revprint function
+	void revprint(Node* current){
+		//stoping condition
+		if(current==NULL){return;}
+		else{
+			//recursion
+			revprint(current->next);
+			cout<<current->data<<"->";
+		}
+	}
 	//countItems function will count the number of nodes and returns it
 	int countItems(){
 		Node *current=head;
@@ -137,6 +153,7 @@ int main(){
 	Link l;
 	l.insert(1);l.insert(2);l.insert(3);l.insert(4);l.insertAt(3,55);l.insertAt(8,6);
 	l.delet();l.deleteAt(2);l.display();
+	l.reverseprint();
 	l.countItems();
 	return 0;
 }
