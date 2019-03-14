@@ -150,13 +150,13 @@ public:
 	//countItems function will count the number of nodes and returns it
 	int countItems(){
 		Node *current=head;
-		int i=1;
+		int i=0;
 		//use loop 
 		while(current->next!=NULL){
 			i++;
 			current=current->next;
 		}
-		return i+1;	
+		return i;	
 	}
 	//display fuction will display the values of the nodes
 	void display(){
